@@ -1,0 +1,26 @@
+{
+  "name": "mini-annonymous-twitter-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/app.js",
+  "bin": "bin/server.js",
+  "scripts": {
+    "start": "bin/server.js",
+    "test": "mocha",
+    "deploy": "bora -r 'stop app; start app' -b 'npm i --production' -i .gitignore -S '/root/app'"
+  },
+  "author": "",
+  "devDependencies": {
+    "bora": "^1.1.0",
+    "chance": "^0.7.5",
+    "mocha": "^2.2.5",
+    "request": "^2.55.0"
+  },
+  "dependencies": {
+    "async": "^1.0.0",
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "mongoose": "^4.0.3",
+    "morgan": "^1.5.3"
+  }
+}
