@@ -1,0 +1,9 @@
+config:
+  target: 'http://127.0.0.1:7070'
+  phases:
+    - duration: 20
+      arrivalRate: 5
+scenarios:
+  - flow:
+    - get:
+        url: "/statuses"

@@ -1,0 +1,14 @@
+config:
+  target: 'http://127.0.0.1:7070'
+  phases:
+    - duration: 5
+      arrivalRate: 5
+  defaults:
+    headers:
+      content-type: application/json
+
+scenarios:
+  - flow:
+    - post:
+        url: "/search"
+        json: [ "hey" ]
