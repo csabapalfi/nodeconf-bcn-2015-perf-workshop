@@ -61,3 +61,14 @@ It's not really a challenge so no solution.
     * then collapse matching stack frames and generete flamegraph
 
 > see fg.sh
+
+## gotchas/tips
+* inlined function won't show up (can confirm inlining by passing --trace-inlining flag)
+* sometime system calls are logged as node:unknown, (e.g libdate development headers are not installed
+* wider rectangle longer time potential issues
+* not just how wide but difference between stack frames on top of each other - (and summing that across all call paths)
+* huge graph might crash browser:
+    * can reduce size by grepping intermediary file
+    * some clever flamegraph tooling by brendan gregg
+* flamechart vs flamegraph: chart maps stack to execution time, can be collapsed into a flamegraph
+* lots of high stack might still have the gaps that can added up to get insights
