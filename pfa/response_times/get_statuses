@@ -1,3 +1,0 @@
-curl -o /dev/null -s \
--w %{time_total}\\n \
-http://localhost:7070/statuses
