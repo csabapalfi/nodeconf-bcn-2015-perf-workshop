@@ -1,21 +1,20 @@
 
 # GET /statuses
 
-Max Latency: XXX ms
-Requests per second: XXX
+Max Latency: 100 ms
+Requests per second: 500
 
 # POST /statuses
 
-Max Latency: XXX ms
-Requests per second: XXX
+Max Latency: 500 ms
+Requests per second: 100
 
 # POST /search
 
-Max Latency: XXX ms
-Requests per second: XXX
+Max Latency: 500 ms
+Requests per second: 100
 
 # GET /stats
 
-Max Latency: XXX ms
-Requests per second: XXX
-
+Max Latency: 1000 ms
+Requests per second: 10
