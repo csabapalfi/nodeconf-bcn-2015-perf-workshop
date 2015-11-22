@@ -29,3 +29,50 @@ free to tweak it (e.g. extend the scenario with more operations).
   - Run a load-test, take another snapshot
   - Load the snapshots into Chrome Dev Tools and compare them
 4. Fix the problem. :wrench::smiley_cat:
+
+## notes about memory
+
+### goals
+
+* avoid frequent gc increasing latency
+* avoid memory leaks
+
+### real memory vs virtual memory
+* allocated RSS vs available VSZ for your process
+* not always precise - especially accross OSes
+
+### gc spaces
+* new space (1-8MB), old space (and large object space, code space)
+* most objects die young
+* allocating in new is fast
+
+### gc process
+* stop the world
+* new space filled up -> scavenges
+* objects surviving couple scavenges promoted to old
+* after a few promotions: mark-sweep and mark-compact
+
+> GC processes of course change from node version to node version
+
+### leak signs
+* growing mem usage
+* process killed by Linux OOM killer
+
+## heapdumps
+
+* heapdump (npm: heapdump), dumps on USR2 signal
+* requires enough memory (2x heaps)
+* blocks your app
+* node version vs chrome devtools version
+* can use it in prod, no overhead
+
+## chrome devtools
+
+* heap snapshots - load
+* by constructors
+* distance - from root
+* count - all object on heap
+* shallow size: directly by the object itself
+* retained size: by holding references to other objects, and thus preventing them from being automatically disposed by a garbage collector
+* compare mode: shows size delta
+* retainer tree - even shows variable name
