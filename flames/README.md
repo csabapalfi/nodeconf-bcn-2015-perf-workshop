@@ -45,3 +45,19 @@ seen in the underlying stacktrace.
 Try changing the parameters passed to `spin(milliseconds)`, re-generate a
 flamegraph and compare with the previous one.
 
+
+## Solution
+
+It's not really a challenge so no solution.
+
+## How to use
+
+1. define latency and throughput (rps) goals - based external reqs or initial benchmarks
+2. run load test and monitor resources (memory, cpu, event loop lag)
+3. CPU 100% or too high? - generate flamegraphs to see where CPU time is spent
+    * run your app with --perf_basic_prof (only on linux)
+    * then run `perf record` to sample stack traces
+    * .map file will contain memory address to JS function mapping
+    * then collapse matching stack frames and generete flamegraph
+
+> see fg.sh
