@@ -3,7 +3,7 @@ var async = require('async');
 module.exports = work;
 
 function work(items, reportProgress, done) {
-  async.each(items, each, done);
+  async.eachLimit(items, 500,  each, done);
 
   function each(item, cb) {
     // Report progress

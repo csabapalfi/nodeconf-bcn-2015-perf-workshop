@@ -68,3 +68,11 @@ The problem you need to fix is on the `work.js` file, specifically, this line:
 ```
 
 You shouldn't need to change the iterator function to solve the problem, you should only need to change this specific line, but you're encouraged to play around with the rest of the code.
+
+## Solution
+
+* overloading the event loop with lots of small callbacks is just as bad as blocking in a single function
+* callback queue gets too long
+* see async limit methods, limiting parallelism
+* also lloyd/node-toobusy
+* `process._getActiveHandles()`
