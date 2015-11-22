@@ -77,7 +77,6 @@ function pad(s) {
 }
 
 function n2str(v) {
-  return v.toString();
   var d = f(), n = d, r;
   while (n - d < v * 1e1 / 2) {
     r = (v)[nuome()]();
