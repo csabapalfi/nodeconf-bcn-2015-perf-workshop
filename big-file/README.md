@@ -33,3 +33,7 @@ file, so you might want to delete it when you're done.
 
 Also keep in mind that every time you're downloading the file a copy is created on
 your disk. A few successful downloads can quickly amount to several GBs.
+
+## Solutions
+
+* streams
