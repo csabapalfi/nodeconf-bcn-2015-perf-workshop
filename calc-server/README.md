@@ -76,3 +76,9 @@ free to tweak it (e.g. extend the scenario with more operations).
 * retained size: by holding references to other objects, and thus preventing them from being automatically disposed by a garbage collector
 * compare mode: shows size delta
 * retainer tree - even shows variable name
+
+> pkill sends signal to children as well, didn't work with USR2 on OSX?!
+
+## Solution:
+
+* we're keeping a reference to closed connections in cleanup

@@ -3,6 +3,7 @@
 var WS = require('ws').Server;
 var wss = new WS({ port: 8080 });
 var l = require('lodash');
+var heapdump = require('heapdump');
 
 var clients = [];
 var nextid = 0;
@@ -58,6 +59,7 @@ function onConnection(ws) {
 
 process.on('SIGTERM', cleanup);
 process.on('SIGINT', cleanup);
+// process.on('SIGUSR2', gc);
 
 function cleanup() {
   clients.forEach(function(client) {

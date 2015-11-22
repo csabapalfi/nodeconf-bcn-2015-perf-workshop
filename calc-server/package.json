@@ -9,6 +9,7 @@
   "author": "",
   "license": "proprietary",
   "dependencies": {
+    "heapdump": "^0.3.7",
     "lodash": "^3.10.0",
     "ws": "^0.7.2"
   }
