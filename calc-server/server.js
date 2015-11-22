@@ -55,6 +55,8 @@ function onConnection(ws) {
 
     console.log('id: %s, op: %s', id, message);
   });
+
+  ws.on('close', () => delete clients[id]);
 }
 
 process.on('SIGTERM', cleanup);
