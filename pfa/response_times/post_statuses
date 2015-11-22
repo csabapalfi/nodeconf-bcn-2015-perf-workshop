@@ -1,0 +1,5 @@
+curl -o /dev/null -s \
+-w %{time_total}\\n \
+-X POST -H "Content-Type: application/json" \
+-d "{\"status\": \"hey\"}" \
+http://localhost:7070/statuses
